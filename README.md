@@ -20,3 +20,8 @@ Run the project
 ```
 npm run dev
 ```
+
+## Deploy to GitHub pages
+```
+npm run deploy
+```
