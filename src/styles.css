@@ -1,3 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../public/*.html";
+
+@theme {
+	--animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(8px);
+		}
+	}
+}
+
+@layer base {
+	html {
+		color-scheme: light dark;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	::selection {
+		background-color: var(--color-zinc-900);
+		color: var(--color-zinc-50);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		::selection {
+			background-color: var(--color-zinc-100);
+			color: var(--color-zinc-900);
+		}
+	}
+}
+
+@utility link-underline {
+	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+	text-decoration-color: var(--color-zinc-300);
+	transition: text-decoration-color 150ms, color 150ms;
+
+	&:hover {
+		text-decoration-color: currentColor;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		text-decoration-color: var(--color-zinc-700);
+	}
+}

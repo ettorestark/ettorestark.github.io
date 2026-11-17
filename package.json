@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
-    "predeploy": "npx tailwindcss -i ./src/styles.css -o ./public/styles.css --minify",
-		"deploy": "gh-pages -d public"
+    "dev": "npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --minify",
+    "predeploy": "npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --minify",
+    "deploy": "gh-pages -d public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
     "gh-pages": "^5.0.0",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^4.3.5"
   }
 }
